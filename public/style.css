@@ -1,0 +1,19 @@
+.heading{
+  text-align: center;
+}
+.form-inline{
+  border: aqua;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+  text-align: -webkit-center;
+  width: 25%;
+  height: 300px;
+  padding-top: 2%;
+}
+
+.root-signin{
+text-align: -webkit-center;
+}
+
+.signindiv{
+  height: 25%;
+}
