@@ -13,7 +13,7 @@ class AllAssetItem extends Component{
     return(
       <div>
 
-        <li><strong><u>Employee Name</u></strong>: {aas.employee} <br /> <strong><u>Asset Type</u></strong>: {aas.assettype} <br /> <strong><u>Details</u></strong>: {aas.assetInfo}</li>
+        <li><strong><u>Employee Name</u></strong>: {aas.employee} <br /> <strong><u>Asset Type</u></strong>: {aas.assetType} <br /> <strong><u>Details</u></strong>: {aas.assetInfo}</li>
         <span><button className="btn btn-danger" onClick={()=>this.revoke()}>Revoke</button></span>
         <hr />
       </div>
