@@ -23,7 +23,7 @@ firebaseApp.auth().onAuthStateChanged(user => {
     const { email } = user;
     store.dispatch(logUser(email));
   } else {
-    
+
   }
 });
 

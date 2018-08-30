@@ -8,7 +8,6 @@ class AllAssetItem extends Component{
   }
 
   render(){
-    console.log(this.props)
     const {aas} = this.props;
     return(
       <div>

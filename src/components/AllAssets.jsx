@@ -37,7 +37,7 @@ class AllAssets extends Component {
   }
 
   render(){
-    console.log("all assets",this.props.allAssets)
+    
     return(
       <div className="container">
         <h3><u>All Assets</u></h3>
