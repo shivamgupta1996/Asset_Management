@@ -52,6 +52,9 @@ class App extends Component{
 
   renderAdminView(){
     const {email} = this.props.user;
+    if(email === null){
+      return(<div></div>)
+    } else
   if(email==="vivek@gmail.com"){
     return (
       <div>
