@@ -3,6 +3,8 @@ import { assetRef } from '../firebase';
 import { connect } from 'react-redux';
 import { sendAllAssets } from '../actions';
 import AllAssetItem from './AllAssetItem';
+import { browserHistory, Link } from 'react-router';
+import {Glyphicon} from 'react-bootstrap';
 
 class AllAssets extends Component {
 
@@ -36,10 +38,15 @@ class AllAssets extends Component {
     }
   }
 
+  goBack(){
+    browserHistory.push('/app');
+  }
+
   render(){
-    
+
     return(
       <div className="container">
+        <button className="btn btn-default" onClick={()=>this.goBack()}><Glyphicon title="back" glyph="menu-left" />Back</button>
         <h3><u>All Assets</u></h3>
         {
           this.renderAssets()

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { requestRef } from '../firebase';
 import { connect } from 'react-redux';
 import { browserHistory } from 'react-router';
+import {Glyphicon} from 'react-bootstrap';
 
 
 class AssetRequest extends Component{
@@ -59,11 +60,16 @@ class AssetRequest extends Component{
       return alert("Asset Type must be either Hardware or Software");
     }
   }
+  
+  goBack(){
+    browserHistory.push('/app');
+  }
 
   render(){
 
     return(
       <div className="container">
+      <button className="btn btn-default" onClick={()=>this.goBack()}><Glyphicon title="back" glyph="menu-left" />Back</button>
         <h2><u>Request Asset</u></h2>
         <hr />
         <div>{this.renderThis()}</div>

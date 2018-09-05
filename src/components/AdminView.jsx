@@ -3,6 +3,8 @@ import { requestRef, assetRef } from '../firebase';
 import {sendRequest} from '../actions';
 import { connect } from 'react-redux';
 import RequestListItem from './RequestListItem';
+import { browserHistory, Link } from 'react-router';
+import {Glyphicon} from 'react-bootstrap';
 
 class AdminView extends Component{
 
@@ -44,11 +46,15 @@ class AdminView extends Component{
     }
   }
 
+  goBack(){
+    browserHistory.push('/app');
+  }
 
   render(){
 
     return(
       <div className="container">
+        <button className="btn btn-default" onClick={()=>this.goBack()}><Glyphicon title="back" glyph="menu-left" />Back</button>
         <h2><u>Admin View</u></h2>
         <h3>Requests:</h3>
         <div>

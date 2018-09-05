@@ -42,11 +42,15 @@ class App extends Component{
     }
   }
 
+  pushSignIn(){
+    browserHistory.push('/signin');
+  }
+  
   renderAuthButton(){
     if(this.props.user.email!=null){
       return(<Glyphicon className="glyphi" onClick={()=>this.signout()} title="Sign Out" glyph="off" />);
     } else {
-      return(<button className="btn btn-warning"><Link to="/signin">Sign in</Link></button>);
+      return(<button className="btn btn-warning"  onClick={()=>this.pushSignIn()}>Sign in</button>);
     }
   }
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {requestRef, assetRef} from '../firebase';
 import {connect} from 'react-redux';
-
+import { browserHistory } from 'react-router';
 class AssetApproval extends Component{
   constructor(props){
     super(props);
@@ -16,6 +16,7 @@ class AssetApproval extends Component{
       if(re.reqKey===this.props.params.reqKey){
         assetRef.push({employee: re.employee, assetType: re.assetType, assetInfo: this.state.assetInfo})
         requestRef.child(`${re.reqKey}`).remove()
+        browserHistory.push('/empreq');
       }
     })
 
