@@ -12,7 +12,6 @@ class App extends Component{
     const {email} = this.props.user;
     assetRef.on('value', snap =>{
       let hwAssets = [];
-
       snap.forEach(assetObj => {
         const {assetType, employee, assetInfo} = assetObj.val();
           hwAssets.push({assetInfo, assetType, employee})
@@ -45,7 +44,7 @@ class App extends Component{
   pushSignIn(){
     browserHistory.push('/signin');
   }
-  
+
   renderAuthButton(){
     if(this.props.user.email!=null){
       return(<Glyphicon className="glyphi" onClick={()=>this.signout()} title="Sign Out" glyph="off" />);
@@ -62,7 +61,8 @@ class App extends Component{
   if(email==="vivek@gmail.com"){
     return (
       <div>
-        <Link to="/empreq">Employee Requests</Link><br />
+        <Link to="/empreq">Employee Requests</Link>
+        <br />
         <Link to="/empass">Employee Assets</Link>
       </div>
     )

@@ -45,7 +45,7 @@ class AllAssets extends Component {
   render(){
 
     return(
-      <div className="container">
+      <div className="container transition-item">
         <button className="btn btn-default" onClick={()=>this.goBack()}><Glyphicon title="back" glyph="menu-left" />Back</button>
         <h3><u>All Assets</u></h3>
         {
