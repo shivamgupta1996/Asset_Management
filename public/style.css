@@ -18,3 +18,14 @@ text-align: -moz-center;
 .signindiv{
   height: 25%;
 }
+
+#rat img{
+  height:100px;
+}
+
+.errorBox{
+  border: 1px solid red;
+  color: red;
+  border-radius: 20px;
+  text-align: center;
+}
