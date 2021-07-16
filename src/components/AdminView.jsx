@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
-import { requestRef, assetRef } from '../firebase';
+import { requestRef } from '../firebase';
 import {sendRequest} from '../actions';
 import { connect } from 'react-redux';
 import RequestListItem from './RequestListItem';
-import { browserHistory, Link } from 'react-router';
+import { browserHistory } from 'react-router';
 import {Glyphicon} from 'react-bootstrap';
-
+const adminCred = "admin@gmail.com";
 class AdminView extends Component{
 
   constructor(props){
@@ -31,7 +31,7 @@ class AdminView extends Component{
   }
 
   renderList(){
-    if(this.props.user.email === "vivek@gmail.com"){
+    if(this.props.user.email === adminCred){
       return(
         <div>
         {
@@ -70,8 +70,7 @@ class AdminView extends Component{
 }
 
 function mapStateToProps(state){
-  const {requests} = state;
-  const {user} = state;
+  const {requests, user} = state;
   return {
     requests,
     user

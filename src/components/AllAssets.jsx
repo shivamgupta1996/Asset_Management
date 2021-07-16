@@ -3,8 +3,9 @@ import { assetRef } from '../firebase';
 import { connect } from 'react-redux';
 import { sendAllAssets } from '../actions';
 import AllAssetItem from './AllAssetItem';
-import { browserHistory, Link } from 'react-router';
+import { browserHistory } from 'react-router';
 import {Glyphicon} from 'react-bootstrap';
+const adminCred = "admin@gmail.com";
 
 class AllAssets extends Component {
 
@@ -23,7 +24,7 @@ class AllAssets extends Component {
 
   renderAssets(){
     const {email} = this.props.user;
-    if(email==="vivek@gmail.com"){
+    if(email === adminCred){
       return (
         <div>
           <ul>
@@ -47,7 +48,7 @@ class AllAssets extends Component {
     return(
       <div className="container transition-item">
         <button className="btn btn-default" onClick={()=>this.goBack()}><Glyphicon title="back" glyph="menu-left" />Back</button>
-        <h3><u>All Assets</u></h3>
+        <h3><u>All employee assets</u></h3>
         {
           this.renderAssets()
         }

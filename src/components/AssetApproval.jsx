@@ -12,7 +12,7 @@ class AssetApproval extends Component{
   }
 
   assign(){
-    this.props.requests.map(re=>{
+    this.props.requests.forEach(re=>{
       if(re.reqKey===this.props.params.reqKey){
         assetRef.push({employee: re.employee, assetType: re.assetType, assetInfo: this.state.assetInfo})
         requestRef.child(`${re.reqKey}`).remove()

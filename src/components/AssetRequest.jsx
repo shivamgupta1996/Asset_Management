@@ -16,25 +16,32 @@ class AssetRequest extends Component{
     }
   }
 
+  onOptionSelect = (eventObj) => {
+    this.setState({assetType: eventObj.target.value})
+  }
+  
   renderThis(){
     const {email} = this.props.user;
     if(email != null){
       return(
-        <div className="form-group">
-        <h5><u>Asset Type:</u></h5><br />
-
+        <div className="form-group asset-req-container">
+        <h5><u>Asset Type:</u></h5>
+        {
+          ["hardware", "software"].map((assetType) => {
+            return (
+              <div key={assetType} style={{ display: "flex" }}>
+                <input type="radio" id={assetType} name="asset type" value={assetType} onChange={this.onOptionSelect} />
+                <label htmlFor={assetType}>{assetType.toUpperCase()}</label>
+              </div>
+            )
+          })
+        }
+        <h5><u>Asset (Max 1 at a time):</u></h5>
         <input
-        type="text"
-        className="form-control"
-        placeholder="Hardware or Software"
-        onChange={e => this.setState({assetType: e.target.value})}
-        />
-        <h5><u>Asset (Max 1 at a time):</u></h5><br />
-        <input
-        type="text"
-        className="form-control"
-        placeholder="Type in your asset"
-        onChange={e => this.setState({asset: e.target.value})}
+          type="text"
+          className="form-control asset-req-text-box"
+          placeholder="Type in your asset"
+          onChange={e => this.setState({asset: e.target.value})}
         />
 
         <button
@@ -69,10 +76,10 @@ class AssetRequest extends Component{
 
     return(
       <div className="container">
-      <button className="btn btn-default" onClick={()=>this.goBack()}><Glyphicon title="back" glyph="menu-left" />Back</button>
+        <button className="btn btn-default" onClick={()=>this.goBack()}><Glyphicon title="back" glyph="menu-left" />Back</button>
         <h2><u>Request Asset</u></h2>
         <hr />
-        <div>{this.renderThis()}</div>
+        <div className="asset-req-box">{this.renderThis()}</div>
       </div>
     )
   }
