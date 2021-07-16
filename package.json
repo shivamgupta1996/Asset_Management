@@ -2,6 +2,10 @@
   "name": "assetmanagement",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.16.0",
+    "npm" : "6.9.0"
+  },
   "dependencies": {
     "firebase": "^5.4.0",
     "react": "^15.6.2",
